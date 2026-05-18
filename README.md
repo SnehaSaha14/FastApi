@@ -1,33 +1,38 @@
 
-```markdown
-# FastAPI + MongoDB Atlas Project
 # FastAPI + MongoDB Atlas Project
 
-![Python](https://img.shields.io/badge/Python-3.14.5-blue?logo=python&logoColor=white)  
-![FastAPI](https://img.shields.io/badge/FastAPI-Framework-green?logo=fastapi)  
-![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen?logo=mongodb)  
+# 🚀 Tech Stack
 
+![Python](https://img.shields.io/badge/Python-3.14.5-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
-
+---
 
 ## 🚀 Overview
+
 This project is a FastAPI application connected to MongoDB Atlas.  
 It demonstrates CRUD operations (Create, Read, Update, Delete) with user data.
 
-## ⚙️ Tech Stack
-- **FastAPI**  
-- **PyMongo**  
-- **MongoDB Atlas**  
-- **Python 3.14.5**  
+---
 
-```
+## ⚙️ Tech Stack
+
+- **FastAPI**
+- **PyMongo**
+- **MongoDB Atlas**
+- **Python 3.14.5**
+
+---
+
 ## 📂 Project Structure
-```
+
+```bash
 📂 FastApi/
 ├── 📄 main.py            - Entry point of FastAPI app
 ├── 📄 config.py          - MongoDB Atlas connection setup
 ├── 📄 models.py          - Database models / logic
-├── 📄 schemas.py         - Pydantic schemas (request/response validation)
+├── 📄 schemas.py         - Pydantic schemas
 ├── 📄 requirements.txt   - Python dependencies
 ├── 📄 README.md          - Project documentation
 ├── 📂 venv/              - Virtual environment
@@ -36,53 +41,144 @@ It demonstrates CRUD operations (Create, Read, Update, Delete) with user data.
 
 ---
 
+## 🔑 Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+DATABASE_NAME=fastapi_db
+```
+
+---
+
 ## ▶️ Running the Project
 
-### 🔽 Clone the repo
+### 🔽 Clone the Repository
+
 ```bash
 git clone https://github.com/SnehaSaha14/FastApi.git
 cd FastApi
 ```
 
-### 🛠️ Create a virtual environment
+### 🛠️ Create Virtual Environment
+
 ```bash
 python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
 ```
 
-### 📦 Install dependencies
+### ▶️ Activate Virtual Environment
+
+#### Linux / Mac
+
+```bash
+source venv/bin/activate
+```
+
+#### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+### 📦 Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 🚀 Run the server
+---
+
+### 🚀 Run the Server
+
 ```bash
 uvicorn main:app --reload
+```
+
+Server will start at:
+
+```bash
+http://127.0.0.1:8000
 ```
 
 ---
 
 ## 📖 API Documentation
-Once the server is running, open your browser and visit:  
-👉 **[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)**  
 
-This will show the **interactive Swagger UI** where you can test all endpoints.
+Once the server is running, open:
+
+```bash
+http://127.0.0.1:8000/docs
+```
+
+Swagger UI will appear where you can test all APIs interactively.
+
+---
+## 📌 API Endpoints
+| Method | Endpoint      | Description
+|--------|---------------|-------------
+| GET    | `/users`      | Get all users
+| POST   | `/users`      | Create a new user
+| PUT    | `/users/{id}` | Update user
+| DELETE | `/users/{id}` | Delete user
 
 ---
 
-## 📌 Features
-- **User creation** with unique email  
-- **Update user** by email or name  
-- Auto‑update **`updated_at` timestamp**  
-- Secure **MongoDB Atlas connection**  
+## ✨ Features
+
+- ✅ User CRUD operations
+- ✅ MongoDB Atlas integration
+- ✅ FastAPI Swagger documentation
+- ✅ Pydantic request validation
+- ✅ Automatic timestamp updates
+- ✅ Clean project structure
+
+---
+
+## 📚 What I Learned
+
+- FastAPI basics
+- REST API development
+- MongoDB Atlas connection
+- CRUD operations
+- API testing using Swagger UI
+- Pydantic schema validation
+
+---
+
+## 🔮 Future Improvements
+
+- 🔐 JWT Authentication
+- 👥 Role-based authorization
+- 🐳 Docker deployment
+- ✅ Unit testing
+- ⚡ CI/CD pipeline
+- ☁️ Cloud deployment
 
 ---
 
 ## 📝 Git Commands
-Stage and commit:
+
 ```bash
 git add .
-git commit -m "Initial commit: FastAPI project"
+git commit -m "Initial commit"
 git push -u origin main
 ```
+
+---
+
+## 👩‍💻 Author
+
+Made with ❤️ by **Sneha Saha**
+
+🔗 GitHub:  
+https://github.com/SnehaSaha14
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+````

@@ -6,12 +6,12 @@ from db.models import User
 app = FastAPI()
 router = APIRouter()
 
-@router.get("/")
+@router.get("/users")
 async def get_all_users():
     data = collection.find()
     return all_users(data)
 
-@router.post("/")
+@router.post("/users")
 async def create_user(user: User):
     try:
         existing_user = list(collection.find({"email": user.email}))
@@ -26,11 +26,11 @@ async def create_user(user: User):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
 
-@router.put("/")
-async def update_user(user: User):
+@router.put("/users/{email}")
+async def update_user(email: str, user: User):
     try:
         result = collection.update_one(
-            {"email": user.email}, 
+            {"email": email}, 
             {"$set": user.dict()}
         )
         if result.matched_count == 0:
@@ -39,7 +39,7 @@ async def update_user(user: User):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
     
-@router.delete("/")
+@router.delete("/users/{email}")
 async def delete_user(email: str):
     try:
         result = collection.delete_one({"email": email})
